@@ -1,0 +1,99 @@
+body {
+	font-family: 'Roboto', sans-serif;
+    color: black;
+    background-color: #D5D5D5;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+	padding: 5%;
+}
+
+#links {
+	text-align: center;
+}
+
+.bookchap {
+	font-size: 18px;
+}
+
+.result{
+	font-size: 14px;
+}
+
+.middle{
+	font-size: 14px;
+}
+
+
+.card {
+	padding:1rem;
+	box-shadow:0 1px 2px #aaa;
+	background-color: white;
+	margin:0 1rem 1rem;
+	border-radius:3px;
+}
+
+.resultsfound {
+	text-align: center;
+}
+
+#countbook {
+	text-align:center; 
+    vertical-align:middle;
+}
+
+table {
+    width:100%;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+    color: black;
+    background-color: #D5D5D5;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+	padding: 5%;
+}
+
+#links {
+	text-align: center;
+}
+
+.bookchap {
+	font-size: 18px;
+}
+
+.result{
+	font-size: 14px;
+}
+
+.middle{
+	font-size: 14px;
+}
+
+
+.card {
+	padding:1rem;
+	box-shadow:0 1px 2px #aaa;
+	background-color: white;
+	margin:0 1rem 1rem;
+	border-radius:3px;
+}
+
+.resultsfound {
+	text-align: center;
+}
+
+#countbook {
+	text-align:center; 
+    vertical-align:middle;
+}
+
+table {
+    width:100%;
+}

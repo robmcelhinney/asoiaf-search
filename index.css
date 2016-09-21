@@ -1,0 +1,171 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    background-color: #D5D5D5;
+    background-image: url("wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-size:contain;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-position:center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    padding: 5%;
+}
+
+#section {
+    background: rgba(31, 31, 31, .85);
+    padding:1.5rem;
+    margin:0 auto;
+    border-radius:3px;
+    position: relative;
+    width: 700px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.query {
+    color: white;
+    font-size: 2.5em;
+    font-family: 'Cinzel', serif;
+}
+
+#checkboxes {
+    font-size: 14px;
+    color:white;
+    font-family: 'Lato', sans-serif;
+}
+
+input[type=checkbox] {
+    outline:0;
+}
+
+label {
+    display: inline-block;
+}
+
+.search {
+    padding:8px 15px;
+    background:rgba(50, 50, 50, 0.2);
+    border:0px solid #dbdbdb;
+}
+
+.submit {
+    position:relative;
+    padding:6px 15px;
+    left:-8px;
+    border:2px solid #207cca;
+    background-color:#207cca;
+    color:#fafafa;
+}
+.submit:hover  {
+    background-color:#fafafa;
+    color:#207cca;
+}
+
+table {
+    width:100%;
+}
+
+#selectboxes {
+    text-align:center; 
+    vertical-align:middle;
+}
+
+#search {
+    width: 50%;
+    height: 2.5%;
+}
+#searchbox {
+    height: 2.5%;
+body {
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    background-color: #D5D5D5;
+    background-image: url("wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-size:contain;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-position:center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    padding: 5%;
+}
+
+#section {
+    background: rgba(31, 31, 31, .85);
+    padding:1.5rem;
+    margin:0 auto;
+    border-radius:3px;
+    position: relative;
+    width: 700px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.query {
+    color: white;
+    font-size: 2.5em;
+    font-family: 'Cinzel', serif;
+}
+
+#checkboxes {
+    font-size: 14px;
+    color:white;
+    font-family: 'Lato', sans-serif;
+}
+
+input[type=checkbox] {
+    outline:0;
+}
+
+label {
+    display: inline-block;
+}
+
+.search {
+    padding:8px 15px;
+    background:rgba(50, 50, 50, 0.2);
+    border:0px solid #dbdbdb;
+}
+
+.submit {
+    position:relative;
+    padding:6px 15px;
+    left:-8px;
+    border:2px solid #207cca;
+    background-color:#207cca;
+    color:#fafafa;
+}
+.submit:hover  {
+    background-color:#fafafa;
+    color:#207cca;
+}
+
+table {
+    width:100%;
+}
+
+#selectboxes {
+    text-align:center; 
+    vertical-align:middle;
+}
+
+#search {
+    width: 50%;
+    height: 2.5%;
+}
+#searchbox {
+    height: 2.5%;
+}

@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>Search ASOIAF</title>
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){ 
+			    $("#check-all").change(function(){
+			    	$('.checkbox1').each(function() {
+               			this.checked = true;                      
+           			});
+			  	});
+			});
+
+			$(document).ready(function(){ 
+			    $("#uncheck-all").change(function(){
+			    	$('.checkbox1').each(function() {
+               			this.checked = false;                      
+           			});
+			  	});
+			});
+		</script>
+
+	</head>
+	<body>
+		<section id="section">
+			<section class="query">Search A Song of Ice and Fire</section>
+			<form id="form" name='queryASOIAF' method='get' action='search.php'>
+				<input type="text" name="query" placeholder="type query here" id="search">
+				<input type="submit" value='Search' id="searchbox"><br>
+				<section>
+					<table id="checkboxes">
+					<tr>
+						<td><input type="checkbox" name="book[]" value="AGOT" class='checkbox1'><label for="AGOT">A Game of Thrones</label></td>
+						<td><input type="checkbox" name="book[]" value="ACOK" class='checkbox1'><label for="ACOK">A Clash of Kings</label></td>
+						<td><input type="checkbox" name="book[]" value="ASOS" class='checkbox1'><label for="ASOS">A Storm of Swords</label></td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="book[]" value="AFFC" class='checkbox1'><label for="AFFC">A Feast for Crows</label></td>
+						<td><input type="checkbox" name="book[]" value="ADWD" class='checkbox1'><label for="ADWD">A Dance with Dragons</label></td>
+						<td><input type="checkbox" name="book[]" value="TWOW" class='checkbox1'><label for="TWOW">The Winds of Winter</label></td>
+					</tr>
+					<tr id="selectboxes">
+						<td><input type="checkbox" name="check-all" id="check-all"/>Check All</td>
+						<td><input type="checkbox" name="uncheck-all" id="uncheck-all"/>Uncheck All</td>
+					</tr>
+					</table>
+				</section>
+			</form>
+		</section>
+	</body>
+</html>
