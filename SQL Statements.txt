@@ -1,0 +1,26 @@
+These are the statements I used to create and alter the database to store the text.
+
+
+DROP TABLE IF EXISTS books;
+CREATE TABLE books (
+	bookname CHAR (4) NOT NULL,
+	chapternum int,
+	chapterpov varchar(30),
+	chaptername varchar(30) UNIQUE,
+	fullchapter mediumtext
+);
+
+DROP TABLE IF EXISTS chapters;
+CREATE TABLE chapters (
+	bookname CHAR (4) NOT NULL,
+	booknumber int,
+	chapternum int,
+	chaptername varchar(30),
+	paranum int,
+	text mediumtext
+);
+ALTER TABLE chapters ENGINE=MyISAM;
+ALTER TABLE chapters ADD FULLTEXT index_name(text);
+REPAIR TABLE chapters QUICK;
+SELECT *
+FROM chapters;
