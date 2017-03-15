@@ -16,13 +16,15 @@
 				    }
 				    return $strSubject;
 				}
-
-			$conn_id = @mysql_connect ("USERNAME.cbtou5c3lpu1.us-west-2.rds.amazonaws.com:3306", "root", "PASSWORD")
+			ini_set('display_errors', 1);
+			$conn_id = mysqli_connect ("DATABASE URL:PORT NO", "USERNAME", "PASSWORD", "DATABASE NAME")
 				or exit ();
-			mysql_select_db ("databasename", $conn_id);
-
 			$query = $_GET['query'];
 			$query = stripslashes($query);
+
+			// $keywordarray = array('a','about','an','are','as','at','be', 'by','com','for','from','how','i','in','is','it','la','of','on','or', 'that','the','this','to','was','what','when','where', 'who','will','with');
+
+			// $query = preg_replace('/\b('. implode('|',$keywordarray) .')\b/i', '', $query);
 
 			$query = preg_replace('!\s+!', ' ', $query); // remove multiple empty spaces
 			$query = trim($query); // removes first and last whitespace
@@ -36,39 +38,40 @@
 				$bookquery = '';
 			}
 
-			$query = mysql_real_escape_string($query); // safety to protect database
+			$query = mysqli_real_escape_string($conn_id, $query); // safety to protect database
 
 			if (strpos($query, 'OR') == false) {
 				$symbol = '+';
 				$query = $symbol . str_replace(' ', " $symbol", $query);
 			}
 			else {
-				
 				$query1half = strtok($query, ' OR ');
 				$query2half = substr($query, strpos($query, " OR ") + 1);
 				$query = $query1half . ' ' . $query2half;
 
 				}
 
+			// $query = preg_replace("/s\b/", "*", $query); //removes 's' from as last letter of word and replaces with '*'
+
 			$sqlcount =  "SELECT COUNT(*) ".
 			"FROM chapters ".
 			"WHERE MATCH(text) AGAINST('$query' IN BOOLEAN MODE) ".
 			"$bookquery ";
-			$resultcount = mysql_query( $sqlcount, $conn_id );
+			$resultcount = mysqli_query( $conn_id, $sqlcount);
 
-			if ($row = mysql_fetch_row ($resultcount))
+			if ($row = mysqli_fetch_row ($resultcount))
 				print ("<section class='card resultsfound'> " .htmlspecialchars($row[0]). " results found.");
-			mysql_free_result ($resultcount);
+			mysqli_free_result ($resultcount);
 
 			$bookcountsql =  "SELECT COUNT(paranum) as paracount, bookname ".
 			"FROM chapters ".
 			"WHERE MATCH(text) AGAINST('$query' IN BOOLEAN MODE) ".
 			"$bookquery ".
 			"GROUP BY booknumber ";
-			$resultbookcountsql = mysql_query( $bookcountsql, $conn_id );
+			$resultbookcountsql = mysqli_query( $conn_id, $bookcountsql);
 
 			printf ("<p><table id='countbook'><tr>");
-			while ($row = mysql_fetch_assoc ($resultbookcountsql))
+			while ($row = mysqli_fetch_assoc ($resultbookcountsql))
 			{
 				printf ("<td>%s - %s</td>", htmlspecialchars ($row['paracount']), htmlspecialchars ($row['bookname']));
 			}
@@ -79,10 +82,12 @@
 			"WHERE MATCH(text) AGAINST('$query' IN BOOLEAN MODE) ".
 			"$bookquery ".
 			"ORDER BY booknumber ";
-			$result = mysql_query( $sql, $conn_id );
+			$result = mysqli_query( $conn_id, $sql);
 
-			while ($row = mysql_fetch_assoc ($result))
-			{	
+			// echo $sql;
+
+			while ($row = mysqli_fetch_assoc ($result))
+			{
 				$paragraphnum = ($row['paranum']);
 				$paragraphnumplus = $paragraphnum + 1;
 				$paragraphnumminus = $paragraphnum - 1;
@@ -97,23 +102,24 @@
 				"AND chapternum = '$chapternum' ".
 				"AND bookname = '$bookname' ";
 
-				$otherresult = mysql_query( $othersql, $conn_id );
+				$otherresult = mysqli_query( $conn_id, $othersql);
 
-				while ($row = mysql_fetch_assoc ($otherresult))
+				while ($row = mysqli_fetch_assoc ($otherresult))
 				{
-					for ($i = 0; $i < mysql_num_fields ($otherresult); $i++)
+					for ($i = 0; $i < mysqli_num_fields ($otherresult); $i++)
 					{
 
 						$finaltext = boldText($row['text'], $queryarray);
-						
+
+						// printf ("<div class='middle'>$finaltext</div><br>");
 						printf ("<div class='result'>$finaltext</div><br>");
-						
+
 					}
 				}
 				printf ("</p></section>");
 			}
 
-			mysql_close($conn_id);
+			mysqli_close($conn_id);
 		?>
 
 	</body>
