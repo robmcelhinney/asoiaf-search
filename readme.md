@@ -6,17 +6,9 @@ The results are returned in a card format and additional information is given, s
 Idea from https://asearchoficeandfire.com.
 "Daemon's crown" : Wallpaper from A World of Ice and Fire by Chase Stone.
 
-Viewable on http://robmcelhinney.netsoc.co/books/
+NO LONGER WORKS ONLINE. REMOVED DATABASE! Viewable on http://robmcelhinney.netsoc.co/books/ 
 
-
-## Code Example
-
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
 
 ## Motivation
 
 www.asearchoficeandfire.com .
-
-## Installation
-
-Provide code examples and explanations of how to get the project.
