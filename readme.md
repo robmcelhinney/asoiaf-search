@@ -1,6 +1,6 @@
-## Synopsis
+## A Song of Ice and Fire Search | No Longer Supported
 
-PHP based website that searches for text in the A Song of Ice and Fire novels by George RR Martin.
+PHP based website that searches for text in a MySQL database of the A Song of Ice and Fire novels by George RR Martin.
 You can search for text by book.
 The results are returned in a card format and additional information is given, such as which POV character's chapters they appeared in.
 Idea from https://asearchoficeandfire.com.
